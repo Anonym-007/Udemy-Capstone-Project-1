@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Blog Website - Capstone Project 1</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+  </script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var backToTopButton = document.getElementById('back-to-top');
+      if (window.scrollY > 20) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <h3><a href="/">MyBrand</a></h3>
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/services" class="nav-link">Services</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+<main>
+  <div id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><a href="#">&lt;</a></div>
